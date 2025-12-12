@@ -1,27 +1,24 @@
-# Frontend Assignment — [Your Name]
+# Frontend Assignment — [Rushil Adkane]
 
 ## Live demo
-- https://<your-deployment-url>
+- (https://frontend-assignment-teal-six.vercel.app/)
 
-## Repo
-- https://github.com/rushiladkane/frontend-assignment
-
-## Overview
-A responsive React + TypeScript frontend built with Vite and TailwindCSS.  
-This project implements a clean landing page (Header, Hero, Features, Footer) as required by the assignment.
+## Repo structure
+- /webapp - Vite React + TypeScript frontend
+/webapp/src - source code (components, styles)
+/dist - production build output (generated)
 
 ## Tech stack
-- React (TypeScript)
-- Vite
-- TailwindCSS
-- PostCSS, Autoprefixer
-- Git + GitHub
+- React with TypeScript  
+- Vite  
+- Tailwind CSS  
+- Framer Motion (animations)
 
-## Setup (how to run locally)
+## Setup / Run locally
 ```bash
-git clone https://github.com/rushiladkane/frontend-assignment.git
-cd frontend-assignment/webapp
+cd webapp
 npm install
-npm run dev      # runs dev server at http://localhost:5173
-# build for production
+npm run dev
+# build
 npm run build
+npm run preview
