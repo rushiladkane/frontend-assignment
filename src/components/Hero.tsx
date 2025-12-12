@@ -1,5 +1,6 @@
 // src/components/Hero.tsx
-import { FC } from "react";
+import type { FC } from "react";
+
 import { motion } from "framer-motion";
 
 const Hero: FC = () => {

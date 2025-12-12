@@ -1,5 +1,7 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { motion } from "framer-motion";
+
+
 
 type Props = {
   title: string;

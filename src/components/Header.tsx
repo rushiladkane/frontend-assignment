@@ -1,5 +1,8 @@
 // src/components/Header.tsx
-import { FC, useState } from "react";
+import { useState } from "react";
+import type { FC } from "react";
+
+
 
 const Header: FC = () => {
   const [open, setOpen] = useState(false);
