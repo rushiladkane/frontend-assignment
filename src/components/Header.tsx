@@ -1,29 +1,43 @@
-export default function Header() {
+// src/components/Header.tsx
+import { FC, useState } from "react";
+
+const Header: FC = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="bg-white shadow-sm">
-      <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-md bg-gradient-to-br from-purple-600 to-indigo-500 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 8c0-2 2-4 4-4h10c2 0 4 2 4 4v8c0 2-2 4-4 4H7c-2 0-4-2-4-4V8z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <span className="font-semibold text-lg text-indigo-600">Frontend Assignment</span>
-        </div>
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a className="text-indigo-600 font-bold text-xl" href="/">Frontend Assignment</a>
 
-        <nav className="hidden md:flex items-center gap-8 text-gray-600">
-          <a href="#features" className="hover:text-indigo-600 transition-colors">Features</a>
-          <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
-          <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
+        <nav className="hidden md:flex gap-6 items-center">
+          <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#about" className="text-gray-600 hover:text-gray-900">About</a>
+          <a href="#contact" className="text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="#get-started" className="px-4 py-2 bg-indigo-600 text-white rounded">Get Started</a>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <a href="#get-started" className="hidden sm:inline-block px-4 py-2 border rounded-md text-sm hover:bg-gray-50">Get Started</a>
-          <button className="ml-1 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-sm">
-            Try Now
-          </button>
-        </div>
+        {/* small screen menu */}
+        <button
+          aria-label="Menu"
+          className="md:hidden px-2 py-1"
+          onClick={() => setOpen(s => !s)}
+        >
+          ☰
+        </button>
       </div>
+
+      {/* mobile nav */}
+      {open && (
+        <div className="md:hidden bg-white border-t py-2">
+          <div className="container mx-auto px-6 flex flex-col gap-2">
+            <a href="#features" onClick={() => setOpen(false)}>Features</a>
+            <a href="#about" onClick={() => setOpen(false)}>About</a>
+            <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          </div>
+        </div>
+      )}
     </header>
   );
-}
+};
+
+export default Header;

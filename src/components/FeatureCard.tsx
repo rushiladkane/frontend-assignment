@@ -1,13 +1,19 @@
+import { FC } from "react";
+import { motion } from "framer-motion";
+
 type Props = {
   title: string;
-  description: string;
+  description?: string;
 };
 
-export default function FeatureCard({ title, description }: Props) {
-  return (
-    <article className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-gray-600 mt-2">{description}</p>
-    </article>
-  );
-}
+const FeatureCard: FC<Props> = ({ title, description }) => (
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="p-6 bg-white rounded-lg shadow-sm border"
+  >
+    <h3 className="font-semibold text-lg">{title}</h3>
+    {description && <p className="mt-2 text-gray-600">{description}</p>}
+  </motion.div>
+);
+
+export default FeatureCard;
